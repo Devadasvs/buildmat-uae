@@ -6,7 +6,13 @@ import Image from 'next/image'
 import { Download, MessageCircle, Check, Truck, Shield, Clock } from 'lucide-react'
 import ProductCard from '@/components/products/ProductCard'
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string
+  }
+}
+
+export default function ProductDetailPage({ params }: PageProps) {
   const router = useRouter()
   const product = products.find(p => p.id === params.id)
 
